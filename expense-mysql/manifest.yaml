@@ -14,14 +14,14 @@ spec:
       component: mysql
       project: expense
       tier: db
-  template:
-    metadata:
-      name: mysql
-      labels:
-        component: mysql
-        project: expense
-        tier: db
-    spec:
-      containes:
-        - name: mysql
-          image: joindevops/mysql:v1.0
+template:
+  metadata:
+    name: mysql
+    labels:
+      component: mysql
+      project: expense
+      tier: db
+  spec:
+    containes:
+      - name: mysql
+        image: joindevops/mysql:v1.0
