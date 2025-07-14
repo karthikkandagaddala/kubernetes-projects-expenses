@@ -25,3 +25,18 @@ spec:
       containers:
         - name: mysql
           image: joindevops/mysql:v1.0
+---
+kind: Service
+apiVersion: apps/v1
+metadata:
+  namespace: karthik
+  name: mysql-service
+spec:
+  selector:
+    component: mysql
+    project: expense
+    tier: db
+  ports:
+    - protocol: TCP
+      targetPort: 3306
+      port: 3306
