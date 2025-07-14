@@ -17,7 +17,7 @@ spec:
   template:
     metadata:
       name: mysql
-      labesl:
+      labels:
         component: mysql
         project: expense
         tier: db
