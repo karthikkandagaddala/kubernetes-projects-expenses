@@ -31,8 +31,8 @@ spec:
         tier: apps
     spec:
       containers:
-        - name: backend
-          image: joindevops/backend:v1.0
+        - name: nginx
+          image: joindevops/backend:1.0.0
           envFrom:
             - configMapRef:
                 name: backend
