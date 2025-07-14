@@ -1,0 +1,27 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  namespace: karthik
+  name: expense-Project
+  labels:
+    component: mysql
+    project: expense
+    tier: db
+spec:
+  replicas: 2
+  selector:
+    labels:
+      component: mysql
+      project: expense
+      tier: db
+  template:
+    metadata:
+      name: mysql
+      labesl:
+        component: mysql
+        project: expense
+        tier: db
+    spec:
+      containes:
+        - name: mysql
+          image: joindevops/mysql:v1.0
