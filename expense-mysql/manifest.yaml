@@ -2,7 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   namespace: karthik
-  name: expense-Project
+  name: expense-project
   labels:
     component: mysql
     project: expense
