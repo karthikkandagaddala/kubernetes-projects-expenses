@@ -7,7 +7,7 @@
 #  nginx.conf: #some logic is there need to see
 ---
 kind: Deployment
-apiVersion: v1
+apiVersion: apps/v1
 metadata:
   namespace: karthik
   name: frontend
