@@ -1,10 +1,10 @@
-kind: ConfigMap
-apiVersion: v1
-metadata:
-  name: frontend-config
-  namespace: karthik
-data:
-  nginx.conf: #some logic is there need to see
+#kind: ConfigMap
+#apiVersion: v1
+#metadata:
+#  name: frontend-config
+# namespace: karthik
+#data:
+#  nginx.conf: #some logic is there need to see
 ---
 kind: Deployment
 apiVersion: v1
@@ -16,7 +16,7 @@ metadata:
     project: expense
     tier: web
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       component: frontend
@@ -31,10 +31,12 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: joindevops/frontend:v1.0
-          envFrom:
-            - configMapRef:
-                name: frontend
+          image: joindevops/frontend:1.2.0
+          ports:
+            - containerPort: 8080
+          #envFrom:
+          # - configMapRef:
+          #  name: frontend
 ---
 kind: Service
 apiVersion: v1
